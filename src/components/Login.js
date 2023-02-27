@@ -71,7 +71,7 @@ function Login() {
           <br />
           <br />
 
-          <button className="alternativeOption">
+          <button id="alternativeOption-login">
             <Link to="/register">New user? - Register</Link>
           </button>
         </form>

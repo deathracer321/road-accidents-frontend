@@ -3,6 +3,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
 import db from "../firebase";
 import uuid from "react-uuid";
+import "../css/Login.css";
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -55,7 +56,7 @@ function Register() {
           <button type="submit">Register</button>
           <br />
           <br />
-          <button id="alternativeOption">
+          <button id="alternativeOption-register">
             <Link to="/Login">Already a User? Login</Link>
           </button>
         </form>

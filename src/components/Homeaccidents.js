@@ -1,7 +1,61 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import "../css/HomeAccidents.css";
+import { doc, getDocFromCache } from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
+import db from "../firebase";
 
 function Homeaccidents() {
-  return <div>Homeaccidents</div>;
+  const docRef = doc(db, "cities", "SF");
+  const [usersImpacted, setUsersImpacted] = useState([]);
+
+  const dataRetriever = async (userId) => {
+    const querySnapshot = await getDocs(collection(db, "users"));
+    var tempAllFetchedData = [];
+    querySnapshot.forEach((doc) => {
+      tempAllFetchedData.push(doc.data());
+    });
+    console.log(tempAllFetchedData);
+    setUsersImpacted(tempAllFetchedData);
+  };
+
+  useEffect(() => {
+    dataRetriever();
+  }, []);
+
+  return (
+    <div>
+      <h1 className="homeaccidents-header">List of recent road accidents:</h1>
+
+      <table id="customers">
+        <tr>
+          <th>Name</th>
+          <th>Emergency Contact</th>
+          <th>Address</th>
+          <th>Pressure</th>
+          <th>Location of incident</th>
+          <th>Ground Clearance</th>
+        </tr>
+        <tr>
+          <td>Alfreds Futterkiste</td>
+          <td>Maria Anders</td>
+          <td>Germany</td>
+          <td>Germany</td>
+          <td>Germany</td>
+          <td>Germany</td>
+        </tr>
+        {usersImpacted.map((item) => {
+          <tr>
+            <td>Name</td>
+            <td>Emergency Contact</td>
+            <td>Address</td>
+            <td>Pressure</td>
+            <td>Location</td>
+            <td>Ground Clearance</td>
+          </tr>;
+        })}
+      </table>
+    </div>
+  );
 }
 
 export default Homeaccidents;

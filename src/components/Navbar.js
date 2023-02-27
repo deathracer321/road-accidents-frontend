@@ -1,12 +1,12 @@
 import React from "react";
-import "../css/Homepage.css";
+import "../css/Navbar.css";
 import { Link } from "react-router-dom";
 
-function Homepage() {
+function Navbar() {
   return (
     <div className="homepage">
       <div className="topnav">
-        <span className="logo">Road Accidents</span>
+        <span className="logo">Road Accident Detection System</span>
 
         <Link className="active" to="/homepage/accidents">
           Accidents
@@ -25,4 +25,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default Navbar;

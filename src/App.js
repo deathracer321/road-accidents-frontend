@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import Homepage from "./components/Homepage";
+import Navbar from "./components/Navbar";
 import Homeabout from "./components/Homeabout";
 import Homeaccidents from "./components/Homeaccidents";
 import Homecontact from "./components/Homecontact";
@@ -32,7 +32,7 @@ function App() {
             element={
               isUserLoggedIn ? (
                 <div>
-                  <Homepage />
+                  <Navbar />
                   <Homeabout />
                 </div>
               ) : (
@@ -47,7 +47,7 @@ function App() {
             element={
               isUserLoggedIn ? (
                 <div>
-                  <Homepage />
+                  <Navbar />
                   <Homecontact />
                 </div>
               ) : (
@@ -62,7 +62,7 @@ function App() {
             element={
               isUserLoggedIn ? (
                 <div>
-                  <Homepage />
+                  <Navbar />
                   <Homenews />
                 </div>
               ) : (
@@ -77,7 +77,7 @@ function App() {
             element={
               isUserLoggedIn ? (
                 <div>
-                  <Homepage />
+                  <Navbar />
                   <Homeaccidents />
                 </div>
               ) : (
