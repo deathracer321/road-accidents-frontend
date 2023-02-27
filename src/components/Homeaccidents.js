@@ -8,6 +8,8 @@ function Homeaccidents() {
   const docRef = doc(db, "cities", "SF");
   const [usersImpacted, setUsersImpacted] = useState([]);
 
+  var listItems;
+
   const dataRetriever = async (userId) => {
     const querySnapshot = await getDocs(collection(db, "users"));
     var tempAllFetchedData = [];
@@ -20,6 +22,7 @@ function Homeaccidents() {
 
   useEffect(() => {
     dataRetriever();
+    console.log(usersImpacted);
   }, []);
 
   return (
@@ -44,14 +47,16 @@ function Homeaccidents() {
           <td>Germany</td>
         </tr>
         {usersImpacted.map((item) => {
-          <tr>
-            <td>Name</td>
-            <td>Emergency Contact</td>
-            <td>Address</td>
-            <td>Pressure</td>
-            <td>Location</td>
-            <td>Ground Clearance</td>
-          </tr>;
+          return (
+            <tr key={item.name}>
+              <td>{item.name}</td>
+              <td>{item.emergencyContact}</td>
+              <td>{item.address}</td>
+              <td>{item.pressure}</td>
+              <td>{`${item.gpsLocationLat},${item.gpsLocationLon}`}</td>
+              <td>{item.groundClearance} </td>
+            </tr>
+          );
         })}
       </table>
     </div>
