@@ -28,37 +28,31 @@ function Homeaccidents() {
   return (
     <div>
       <h1 className="homeaccidents-header">List of recent road accidents:</h1>
+      <div id="homeaccidents-table">
+        <table id="customers">
+          <tr>
+            <th>Name</th>
+            <th>Emergency Contact</th>
+            <th>Address</th>
+            <th>Pressure</th>
+            <th>Location of incident</th>
+            <th>Ground Clearance</th>
+          </tr>
 
-      <table id="customers">
-        <tr>
-          <th>Name</th>
-          <th>Emergency Contact</th>
-          <th>Address</th>
-          <th>Pressure</th>
-          <th>Location of incident</th>
-          <th>Ground Clearance</th>
-        </tr>
-        <tr>
-          <td>Alfreds Futterkiste</td>
-          <td>Maria Anders</td>
-          <td>Germany</td>
-          <td>Germany</td>
-          <td>Germany</td>
-          <td>Germany</td>
-        </tr>
-        {usersImpacted.map((item) => {
-          return (
-            <tr key={item.name}>
-              <td>{item.name}</td>
-              <td>{item.emergencyContact}</td>
-              <td>{item.address}</td>
-              <td>{item.pressure}</td>
-              <td>{`${item.gpsLocationLat},${item.gpsLocationLon}`}</td>
-              <td>{item.groundClearance} </td>
-            </tr>
-          );
-        })}
-      </table>
+          {usersImpacted.map((item) => {
+            return (
+              <tr key={item.name}>
+                <td>{item.name}</td>
+                <td>{item.emergencyContact}</td>
+                <td>{item.address}</td>
+                <td>{item.pressure}</td>
+                <td>{`${item.gpsLocationLat},${item.gpsLocationLon}`}</td>
+                <td>{item.groundClearance} </td>
+              </tr>
+            );
+          })}
+        </table>
+      </div>
     </div>
   );
 }
