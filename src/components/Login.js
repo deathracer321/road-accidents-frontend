@@ -32,7 +32,6 @@ function Login() {
     e.preventDefault();
     setEmail(e.target.email.value);
     setPassword(e.target.password.value);
-    console.log(dataRetrieved);
   };
 
   // this below use effect is for checking the credentials
@@ -40,9 +39,8 @@ function Login() {
   useEffect(() => {
     dataRetrieved.map((eachUser) => {
       if (eachUser.email === email && eachUser.password === password) {
-        alert("Logged in successfully");
         setUserLoggedIn(true);
-        navigate("/homepage");
+        navigate("/homepage/about");
       }
     });
   }, [password, email]);
