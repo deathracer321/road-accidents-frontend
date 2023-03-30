@@ -21,13 +21,13 @@
 
 /* Fake image */
 .fakeimg {
-  background-color: #aaa;
   width: 100%;
   padding: 20px;
 }
 
 /* Add a card effect for articles */
 .card {
+  text-align: center;
   background-color: white;
   padding: 20px;
   margin-top: 20px;
@@ -38,6 +38,13 @@
   content: "";
   display: table;
   clear: both;
+}
+
+.row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Footer */
@@ -58,5 +65,5 @@
 }
 
 .homenewsimage {
-  height: 100px;
+  height: 150px;
 }

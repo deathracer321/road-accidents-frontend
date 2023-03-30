@@ -46,7 +46,14 @@ function Homeaccidents() {
                 <td>{item.emergencyContact}</td>
                 <td>{item.address}</td>
                 <td>{item.pressure}</td>
-                <td>{`${item.gpsLocationLat},${item.gpsLocationLon}`}</td>
+                <td>
+                  <a
+                    href={`https://www.google.com/search?q=${item.gpsLocationLat}%2C${item.gpsLocationLon}`}
+                    rel="noreferrer"
+                  >
+                    {`${item.gpsLocationLat},${item.gpsLocationLon}`}
+                  </a>
+                </td>
                 <td>{item.groundClearance} </td>
               </tr>
             );

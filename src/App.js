@@ -13,7 +13,7 @@ import "./App.css";
 export const UserLoggedInContext = createContext();
 
 function App() {
-  const [isUserLoggedIn, setUserLoggedIn] = useState(false);
+  const [isUserLoggedIn, setUserLoggedIn] = useState(true);
 
   // const userNotAuthorized = (
   //   <button id="redirect-button">
